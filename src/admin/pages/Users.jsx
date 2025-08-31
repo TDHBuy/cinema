@@ -1,6 +1,9 @@
 import UsersTable from "../components/dashboard/users/UsersTable.jsx";
+import {useState} from "react";
+import ModalUpdateUser from "../components/dashboard/users/ModalUpdateUser.jsx";
 
 const Users = ()=>{
+    const [users, setUsers] = useState([]);
     return(
         <div className="mx-3">
             <div className="text-2xl my-2 font-serif">Manage Users</div>
@@ -11,7 +14,8 @@ const Users = ()=>{
                 </div>
             </div>
             <div className="users-table-container">
-                <UsersTable></UsersTable>
+                <UsersTable users={users} setUsers={setUsers}></UsersTable>
+                <ModalUpdateUser></ModalUpdateUser>
             </div>
         </div>
     )

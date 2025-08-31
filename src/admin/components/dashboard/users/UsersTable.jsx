@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {getAllUsers} from "../../../services/UserServices.jsx";
 
-const UsersTable = ()=>{
-    const [users, setUsers] = useState([]);
+const UsersTable = (props)=>{
+    let {users,setUsers} = props
     useEffect(() => {
         fectchUsers();
     }, []);
